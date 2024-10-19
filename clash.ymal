@@ -1,409 +1,1041 @@
 ####################################
 # 创建者：v2rayse.com
-# 客户端：Clash
-# 创建时间：2023-03-04 12:52:31
+# 客户端：Clash.Meta
+# 创建时间：19-10-2024 17:39:47
 # 使用模版：V2RaySE 默认模版
-# 节点数量：50
+# 节点数量：131
 ####################################
+# !!当前配置文件请使用基于 Clash.Meta 内核程序
 mixed-port: 7890
 allow-lan: true
 log-level: info
 external-controller: 0.0.0.0:9090
 dns:
   enabled: true
-  nameserver:
-    - 119.29.29.29
+  listen: 0.0.0.0:1053
+  ipv6: true
+  default-nameserver:
     - 223.5.5.5
-  fallback:
-    - 8.8.8.8
-    - 8.8.4.4
-    - tls://1.0.0.1:853
-    - tls://dns.google:853
+    - 114.114.114.114
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.linksys.com'
+    - '*.linksyssmartwifi.com'
+    - swscan.apple.com
+    - mesu.apple.com
+    - '*.msftconnecttest.com'
+    - '*.msftncsi.com'
+    - time.*.com
+    - time.*.gov
+    - time.*.edu.cn
+    - time.*.apple.com
+    - time1.*.com
+    - time2.*.com
+    - time3.*.com
+    - time4.*.com
+    - time5.*.com
+    - time6.*.com
+    - time7.*.com
+    - ntp.*.com
+    - ntp.*.com
+    - ntp1.*.com
+    - ntp2.*.com
+    - ntp3.*.com
+    - ntp4.*.com
+    - ntp5.*.com
+    - ntp6.*.com
+    - ntp7.*.com
+    - '*.time.edu.cn'
+    - '*.ntp.org.cn'
+    - +.pool.ntp.org
+    - time1.cloud.tencent.com
+    - +.music.163.com
+    - '*.126.net'
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - '*.kuwo.cn'
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - +.y.qq.com
+    - +.music.tc.qq.com
+    - aqqmusic.tc.qq.com
+    - +.stream.qqmusic.qq.com
+    - '*.xiami.com'
+    - +.music.migu.cn
+    - +.srv.nintendo.net
+    - +.stun.playstation.net
+    - xbox.*.microsoft.com
+    - +.xboxlive.com
+    - localhost.ptlogin2.qq.com
+    - proxy.golang.org
+    - stun.*.*
+    - stun.*.*.*
+    - '*.mcdn.bilivideo.cn'
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback-filter:
+    geoip: false
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
 
 proxies:
-  - {"name":"🇺🇸_US_美国_1","type":"vmess","server":"zfc.windowsupdate1.com","port":443,"cipher":"auto","uuid":"769c2da7-add3-42e8-a03c-07be9fcf483c","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/yfjc/us2?ed=2048","headers":{"host":"us2.yfjc.sbs"}}}
-  - {"name":"🇸🇬_SG_新加坡->🇬🇧_GB_英国_1","type":"vmess","server":"54.254.184.159","port":9000,"cipher":"auto","uuid":"55520c7a-9034-4326-bc57-e52820a50027","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇸🇬_SG_新加坡_1","type":"vmess","server":"v41.gaowosiquanjia.top","port":80,"cipher":"auto","uuid":"fceab4b1-5abd-4015-a165-aa694327b462","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇫🇮_FI_芬兰","type":"trojan","server":"linux.seatech.ir","port":24589,"udp":true,"password":"q37K55b8FE","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇨🇳_CN_中国->🇹🇼_TW_台湾","type":"vmess","server":"36.156.102.164","port":10003,"cipher":"auto","uuid":"cb7001c7-e495-41ac-b942-f25f60523414","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇸🇬_SG_新加坡_2","type":"ss","server":"18.141.224.98","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"🇬🇧_GB_英国_1","type":"vmess","server":"vuk2.0bad.com","port":443,"cipher":"auto","uuid":"927094d3-d678-4763-8591-e240d0bcae87","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇸🇬_SG_新加坡_3","type":"vmess","server":"20.205.214.65","port":18730,"cipher":"auto","uuid":"b8ec1401-e5c1-4299-b315-9694cca0c2f8","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇺🇸_US_美国_2","type":"ss","server":"34.221.222.115","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"🇸🇬_SG_新加坡->🇦🇺_AU_澳大利亚","type":"vmess","server":"20.205.214.65","port":35848,"cipher":"auto","uuid":"b8ec1401-e5c1-4299-b315-9694cca0c2f8","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇨🇳_CN_中国_1","type":"vmess","server":"112.132.215.189","port":50002,"cipher":"auto","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":64,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇸🇬_SG_新加坡_4","type":"ss","server":"18.141.181.186","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"🇺🇸_US_美国_3","type":"vmess","server":"america2.yj2022.ga","port":443,"cipher":"auto","uuid":"4b5e4565-322f-4223-a891-78a84f189726","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇺🇸_US_美国_4","type":"vmess","server":"141.193.213.21","port":443,"cipher":"auto","uuid":"2b214122-1906-428a-bbb7-a039cbb7cd5c","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/9JZFDTKE","headers":{"host":"fr1.trump2023.org"}}}
-  - {"name":"🇺🇸_US_美国_5","type":"ss","server":"34.217.90.62","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"🇨🇳_CN_中国_2","type":"vmess","server":"36.134.16.171","port":11023,"cipher":"auto","uuid":"8c042a38-71c1-1dcb-00df-54880236e0dc","alterId":0,"tls":false,"skip-cert-verify":true,"network":""}
-  - {"name":"🇺🇸_US_美国->🇫🇷_FR_法国","type":"vmess","server":"141.193.213.20","port":443,"cipher":"auto","uuid":"2b214122-1906-428a-bbb7-a039cbb7cd5c","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/9JZFDTKE","headers":{"host":"fr1.trump2023.org"}}}
-  - {"name":"🇺🇸_US_美国_6","type":"vmess","server":"usdo.tzccifq.ga","port":443,"cipher":"auto","uuid":"58eb724d-5a95-4b9c-851e-2cb3b408e85f","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇬🇧_GB_英国_2","type":"ss","server":"212.102.53.198","port":443,"password":"shadowsocks","cipher":"aes-128-gcm"}
-  - {"name":"🇺🇸_US_美国_7","type":"ss","server":"35.92.132.241","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"🇭🇰_HK_香港->🇱🇺_LU_卢森堡","type":"vmess","server":"v21.gaowosiquanjia.top","port":80,"cipher":"auto","uuid":"fceab4b1-5abd-4015-a165-aa694327b462","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇨🇳_CN_中国_3","type":"vmess","server":"106.55.234.95","port":31372,"cipher":"auto","uuid":"374d3519-455c-45b8-e3b1-0e2e9fcf4411","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇬🇧_GB_英国_3","type":"ss","server":"212.102.53.195","port":443,"password":"shadowsocks","cipher":"aes-128-gcm"}
-  - {"name":"🇯🇵_JP_日本_1","type":"vmess","server":"54.150.72.99","port":57762,"cipher":"auto","uuid":"df5045f5-41a6-48be-98c1-b20032a0158e","alterId":64,"tls":true,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇺🇸_US_美国_8","type":"vmess","server":"haxus3.janechiu.icu","port":443,"cipher":"auto","uuid":"0df258cb-a376-4b8e-a378-a556a4658aeb","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇫🇷_FR_法国","type":"ssr","server":"z0111.security-cloudfront-cdn.com","port":42833,"password":"YpX2opBbrfqJzzMs","cipher":"aes-256-cfb","obfs":"http_simple","protocol":"origin"}
-  - {"name":"🇸🇬_SG_新加坡_5","type":"vmess","server":"20.205.214.65","port":543,"cipher":"auto","uuid":"b8ec1401-e5c1-4299-b315-9694cca0c2f8","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇭🇰_HK_香港_1","type":"trojan","server":"37.123.196.166","port":28893,"udp":true,"password":"shenmegui","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇭🇰_HK_香港_2","type":"vmess","server":"43.155.102.33","port":50028,"cipher":"auto","uuid":"4592247e-1528-4943-8bf3-cd9bb58b31c0","alterId":64,"tls":true,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇨🇳_CN_中国_4","type":"vmess","server":"36.134.16.190","port":11023,"cipher":"auto","uuid":"8c042a38-71c1-1dcb-00df-54880236e0dc","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇺🇸_US_美国_9","type":"trojan","server":"phoenix-d.4422331.xyz","port":10086,"udp":true,"password":"4134219f-2384-449c-92e9-50fe8474c30a","sni":"https://mofa.4422331.xyz","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇺🇸_US_美国->🇩🇪_DE_德国_1","type":"vmess","server":"germany1.yj2022.ga","port":443,"cipher":"auto","uuid":"4b5e4565-322f-4223-a891-78a84f189726","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇯🇵_JP_日本_2","type":"vmess","server":"13.230.190.94","port":8080,"cipher":"auto","uuid":"55520c7a-9034-4326-bc57-e52820a50027","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇦🇺_AU_澳大利亚","type":"trojan","server":"melbourne-m2.4422331.xyz","port":10086,"udp":true,"password":"4134219f-2384-449c-92e9-50fe8474c30a","sni":"https://mofa.4422331.xyz","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇭🇰_HK_香港_3","type":"vmess","server":"43.154.148.54","port":51790,"cipher":"auto","uuid":"b74f0019-b839-421f-add8-ffaf94fc3139","alterId":64,"tls":true,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇸🇬_SG_新加坡_6","type":"ss","server":"13.213.38.103","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
-  - {"name":"🇸🇬_SG_新加坡_7","type":"ss","server":"13.215.183.79","port":8080,"password":"doub.io","cipher":"aes-256-cfb"}
-  - {"name":"🇭🇰_HK_香港_4","type":"trojan","server":"103.103.245.125","port":50418,"udp":true,"password":"a70b39d1-62ea-4d9e-b681-9c5408352234","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇸🇬_SG_新加坡->🇯🇵_JP_日本","type":"vmess","server":"20.205.214.65","port":11913,"cipher":"auto","uuid":"b8ec1401-e5c1-4299-b315-9694cca0c2f8","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇸🇬_SG_新加坡->🇬🇧_GB_英国_2","type":"vmess","server":"20.205.214.65","port":55053,"cipher":"auto","uuid":"b8ec1401-e5c1-4299-b315-9694cca0c2f8","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇺🇸_US_美国->🇩🇪_DE_德国_2","type":"vmess","server":"v51.gaowosiquanjia.top","port":80,"cipher":"auto","uuid":"fceab4b1-5abd-4015-a165-aa694327b462","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇧🇿_BZ_伯利兹","type":"vmess","server":"203.30.188.121","port":443,"cipher":"auto","uuid":"c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/AUIKN8AU","headers":{"host":"oplg1.cfcdn2.xyz"}}}
-  - {"name":"🇭🇰_HK_香港->🇯🇵_JP_日本","type":"vmess","server":"hkt.52147.top","port":80,"cipher":"auto","uuid":"769c2da7-add3-42e8-a03c-07be9fcf483c","alterId":0,"tls":false,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇭🇰_HK_香港_5","type":"vmess","server":"8.218.150.152","port":45106,"cipher":"auto","uuid":"aa7f7fd3-8f88-45c7-9e27-a03380d6cc89","alterId":0,"tls":false,"skip-cert-verify":true,"network":"http"}
-  - {"name":"🇺🇸_US_美国_10","type":"vmess","server":"mjj3011.hjdn.tk","port":443,"cipher":"auto","uuid":"06371d67-d976-4c84-ecdf-d7c989e80155","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws"}
-  - {"name":"🇸🇬_SG_新加坡->🇺🇸_US_美国","type":"vmess","server":"54.254.184.159","port":9001,"cipher":"auto","uuid":"55520c7a-9034-4326-bc57-e52820a50027","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇨🇦_CA_加拿大","type":"vmess","server":"23.227.38.26","port":443,"cipher":"auto","uuid":"c5a2d7b8-bf84-4f97-8577-b9b87f2baaf7","alterId":0,"tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/AUIKN8AU","headers":{"host":"oplg1.cfcdn2.xyz"}}}
-  - {"name":"🇻🇳_VN_越南","type":"trojan","server":"103.173.255.127","port":443,"udp":true,"password":"5aebe74d-326d-4c34-813b-1283236649ec","skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇨🇳_CN_中国_5","type":"vmess","server":"39.103.165.178","port":50002,"cipher":"auto","uuid":"418048af-a293-4b99-9b0c-98ca3580dd24","alterId":64,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"🇺🇸_US_美国_11","type":"ss","server":"34.209.215.97","port":443,"password":"amazonskr05","cipher":"aes-256-cfb"}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.3.52:443","type":"vless","server":"104.21.3.52","port":443,"uuid":"90cd4a77-141a-43c9-991b-08263cfe9c10","tls":true,"servername":"79193c43.aryoovpn-5fr.pages.dev","network":"ws","ws-opts":{"path":"/Telegram@Azarakhsh_Proxy/?ed=2048","headers":{"host":"79193c43.aryoovpn-5fr.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.78.17:443","type":"vless","server":"104.20.78.17","port":443,"uuid":"e8b87dd9-cc8f-407c-a1f3-a564009fe6ee","tls":true,"servername":"dc1bf227.vf-8co.pages.dev","network":"ws","ws-opts":{"path":"/Telegram@Azarakhsh_Proxy/?ed=2048","headers":{"host":"dc1bf227.vf-8co.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.63.18:443","type":"vless","server":"104.17.63.18","port":443,"uuid":"476058ef-b67a-4664-aab4-e10268ee3b71","tls":true,"servername":"faLcUnArGO.3086Bdee98.WOrKeRs.deV","network":"ws","ws-opts":{"path":"/594IUhlREsfEUExK?ed=2048","headers":{"host":"faLcUnArGO.3086Bdee98.WOrKeRs.deV"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.244:443","type":"vless","server":"172.66.44.244","port":443,"uuid":"08a07fca-27c1-46f5-85dc-6c9043588836","tls":true,"servername":"pardazeshvpn-tg110.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg110.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.23:443","type":"vless","server":"172.66.47.23","port":443,"uuid":"38720105-063f-40f5-a5eb-f3198b9b617d","tls":true,"servername":"aksnmaioas.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"aksnmaioas.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.138.161:443","type":"vless","server":"172.67.138.161","port":443,"uuid":"33818a00-cbdb-4ae0-a31a-e7de094e7aec","tls":true,"servername":"uciranir-uciranir-uiranir-uciranir-uciranir-uciranir-uciranir1.detixi1932.workers.dev","network":"ws","ws-opts":{"path":"/@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR/?ed=2047","headers":{"host":"uciranir-uciranir-uiranir-uciranir-uciranir-uciranir-uciranir1.detixi1932.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.239.159:443","type":"vless","server":"104.17.239.159","port":443,"uuid":"e72aa3f9-7453-45b2-8f02-45c1f4953d80","tls":true,"servername":"kana-lma-falcunargo.jabec44039.workers.dev","network":"ws","ws-opts":{"path":"/?ed","headers":{"host":"kana-lma-falcunargo.jabec44039.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:2087","type":"vless","server":"172.67.161.104","port":2087,"uuid":"a8a09765-7681-47ba-9ea0-e0ae79d51088","tls":true,"servername":"tnetplus-1wc.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"tnetplus-1wc.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_1","type":"vless","server":"104.17.148.22","port":443,"uuid":"e2f4d1fa-0a6d-48c3-a5bb-8b438e78af23","tls":true,"servername":"119f3a0b.chikiy123w.pages.dev","network":"ws","ws-opts":{"path":"/Telegram-@V2ray_Alpha/?ed=2048","headers":{"host":"119f3a0b.chikiy123w.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.5.222:443","type":"vless","server":"104.25.5.222","port":443,"uuid":"18cb1e84-aec2-44b3-aadd-5d040f47a842","tls":true,"servername":"pardazeshvpn-tg44.pages.dev","network":"ws","ws-opts":{"path":"/@VPNHTTPInjectorfree","headers":{"host":"pardazeshvpn-tg44.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.72:2053","type":"vless","server":"104.21.24.72","port":2053,"uuid":"4f6d5821-2bf8-40ff-ad2f-1794c962f27a","tls":true,"servername":"kanal-ma-falcunargo.johiki7549.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"kanal-ma-falcunargo.johiki7549.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.212:443","type":"vless","server":"172.67.128.212","port":443,"uuid":"e794da45-0d8d-4b7a-9ae9-b0b84528b360","tls":true,"servername":"hexaprop.dirih76753.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"hexaprop.dirih76753.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.196.25:443","type":"vless","server":"172.67.196.25","port":443,"uuid":"c3c20db7-d32b-454a-9843-ec22d064a842","tls":true,"servername":"uciranir-uciranir-uiranir-uciranir-uciranir-uciranir-uciranir2.kehib41931.workers.dev","network":"ws","ws-opts":{"path":"/-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR/?ed=2047","headers":{"host":"uciranir-uciranir-uiranir-uciranir-uciranir-uciranir-uciranir2.kehib41931.workers.dev"}}}
+  - {"name":"🔒 TR-WS-TLS 🏴‍☠️ NA-104.20.19.168:2083","type":"trojan","server":"104.20.19.168","port":2083,"udp":true,"password":"auto","sni":"e9464f45.trauma-2r4.pages.dev","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"e9464f45.trauma-2r4.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.100:443","type":"vless","server":"172.66.47.100","port":443,"uuid":"4045e84e-5e3c-4f70-8ff5-c1097882a55a","tls":true,"servername":"bpb-worker-panel1-e4p.pages.dev","network":"ws","ws-opts":{"path":"/Telegram@V2ray_Alpha/?ed=2560","headers":{"host":"bpb-worker-panel1-e4p.pages.dev"}},"alpn":["http/1.1"]}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.142.142:443","type":"vless","server":"172.67.142.142","port":443,"uuid":"c8e6e9d4-4339-4ee2-830b-8ece0f78f46b","tls":true,"servername":"selincselincselincselincselincselincselincselinc.selincselinc.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"selincselincselincselincselincselincselincselinc.selincselinc.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.190:443","type":"vless","server":"172.66.44.190","port":443,"uuid":"bb27a0c6-aa5e-4105-a943-b87239507057","tls":true,"servername":"pardazeshvpn-tg86.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg86.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.190.58:443","type":"vless","server":"172.67.190.58","port":443,"uuid":"b0e6a2c9-e667-4e42-9cb3-77d7db3e736b","tls":true,"servername":"bypassfilter.wrevdav.workers.dev","network":"ws","ws-opts":{"path":"/@bypass_filter/?ed=2048","headers":{"host":"bypassfilter.wrevdav.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.56:2053","type":"vless","server":"104.21.4.56","port":2053,"uuid":"1ef91e6f-7522-4ded-84ea-4523dd2a15d6","tls":true,"servername":"uciran-uciran-uciran-uciran-uciran-uciran-uciran-uciran.gijih70892.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"uciran-uciran-uciran-uciran-uciran-uciran-uciran-uciran.gijih70892.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.132.56:2096","type":"vless","server":"172.67.132.56","port":2096,"uuid":"c9eb0fe9-09dd-495c-a11a-0f2e580c9c94","tls":true,"servername":"shahabbabadii.shahab-jahanbazi79.workers.dev","network":"ws","ws-opts":{"path":"/vless-ws/?ed=2048","headers":{"host":"shahabbabadii.shahab-jahanbazi79.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-162.159.40.113:2083","type":"vless","server":"162.159.40.113","port":2083,"uuid":"417c54fa-78c7-492f-bbc9-66f61be02ced","tls":true,"servername":"selinc--selinc--selinc--selinc--selinc.fqsnv.workers.dev","network":"ws","ws-opts":{"path":"/vless-ws/?ed=2048","headers":{"host":"selinc--selinc--selinc--selinc--selinc.fqsnv.workers.dev"}},"alpn":["http/1.1"]}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:443","type":"vless","server":"172.66.44.243","port":443,"uuid":"172c168f-c087-479f-b594-63dbf14aa504","tls":true,"servername":"pardazeshvpn-tg98.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg98.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.1.80:443","type":"vless","server":"104.21.1.80","port":443,"uuid":"e794da45-0d8d-4b7a-9ae9-b0b84528b360","tls":true,"servername":"hexaprop.dirih76753.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"hexaprop.dirih76753.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.237:8443","type":"vless","server":"104.21.19.237","port":8443,"uuid":"df4e1392-c78a-4a67-86b2-8c8eefce64b8","tls":true,"servername":"imaneemon66.imanf8roouznia.workers.dev","network":"ws","ws-opts":{"path":"/vless-ws/?ed=2048","headers":{"host":"imaneemon66.imanf8roouznia.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.106:443","type":"vless","server":"172.66.47.106","port":443,"uuid":"bf7e1009-1574-44f7-86df-6cbecd338477","tls":true,"servername":"pardazeshvpn-tg18.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"pardazeshvpn-tg18.pages.dev"}}}
+  - {"name":"🔒 TR-WS-TLS 🏴‍☠️ NA-104.19.35.14:443","type":"trojan","server":"104.19.35.14","port":443,"udp":true,"password":"bpb-trojan","sni":"BPB-wOrkeR-pANel1-E4P.pageS.DeV","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/trbo9SGocZQNTqq3Cd/YnBiLnlvdXNlZi5pc2VnYXJvLmNvbQ==","headers":{"host":"bpb-worker-panel1-e4p.pages.dev"}},"alpn":["http/1.1"]}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_1","type":"vless","server":"104.18.218.118","port":443,"uuid":"a94edb46-0734-4593-a8b5-9cd11ddc57f6","tls":true,"servername":"5c53ca21.vpn-aryoo.pages.dev","network":"ws","ws-opts":{"path":"/Telegram-------V2rayi_net_-_-_-_-Telegram-------V2rayi_net/?ed=2560","headers":{"host":"5c53ca21.vpn-aryoo.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.79.64:443","type":"vless","server":"104.21.79.64","port":443,"uuid":"c8e6e9d4-4339-4ee2-830b-8ece0f78f46b","tls":true,"servername":"selincselincselincselincselincselincselincselinc.selincselinc.workers.dev","network":"ws","ws-opts":{"path":"@vpnAndroid2/?ed=2048","headers":{"host":"selincselincselincselincselincselincselincselinc.selincselinc.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.1:443","type":"vless","server":"188.114.99.1","port":443,"uuid":"a17ff0c6-3aee-48c9-92e7-9f5019c595d6","tls":true,"servername":"esetsecuritylicense1.zzzgldy.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"esetsecuritylicense1.zzzgldy.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:2096","type":"vless","server":"104.21.83.62","port":2096,"uuid":"0fdc0235-0055-4203-a66f-f29e7e663d10","tls":true,"servername":"tnetplus3.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"tnetplus3.pages.dev"}}}
+  - {"name":"🔒 TR-WS-TLS 🏴‍☠️ NA-172.66.44.131:443","type":"trojan","server":"172.66.44.131","port":443,"udp":true,"password":"auto","sni":"e9464f45.trauma-2r4.pages.dev","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"e9464f45.trauma-2r4.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.215:443","type":"vless","server":"104.21.19.215","port":443,"uuid":"b0e6a2c9-e667-4e42-9cb3-77d7db3e736b","tls":true,"servername":"bypassfilter.wrevdav.workers.dev","network":"ws","ws-opts":{"path":"/@bypass_filter/?ed=2048","headers":{"host":"bypassfilter.wrevdav.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.98:443","type":"vless","server":"172.66.44.98","port":443,"uuid":"eb990b65-52d6-474a-8724-21114c866e73","tls":true,"servername":"pardazeshvpn-tg84.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg84.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.57:443","type":"vless","server":"172.66.44.57","port":443,"uuid":"2d01b0eb-91fd-4eae-9fb0-50c08856181d","tls":true,"servername":"e420ceed.aryoo-vpn-friends.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2560","headers":{"host":"e420ceed.aryoo-vpn-friends.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.128:443","type":"vless","server":"172.66.44.128","port":443,"uuid":"ea93598b-a8d8-449a-a925-520c6e1626ee","tls":true,"servername":"pardazeshvpn-tg105.pages.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"pardazeshvpn-tg105.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.98.102:443","type":"vless","server":"188.114.98.102","port":443,"uuid":"afd3e846-f132-4305-82dc-466c96b1108a","tls":true,"servername":"esetsecuritylicense1.wsshga.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"esetsecuritylicense1.wsshga.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.172.147:443","type":"vless","server":"172.67.172.147","port":443,"uuid":"e1cf1cbc-a1b0-4db8-86b0-45dd2e8a68da","tls":true,"servername":"easynet23.gosomok252.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"easynet23.gosomok252.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.93.27:443","type":"vless","server":"104.18.93.27","port":443,"uuid":"0d836bdb-adbc-4863-8c56-dc662e7f6919","tls":true,"servername":"mahdiv2.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"mahdiv2.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.24.24.45:2053","type":"vless","server":"104.24.24.45","port":2053,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"78345.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"78345.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:8443","type":"vless","server":"172.66.44.243","port":8443,"uuid":"3b7ac5ec-ff18-487b-938c-09fedbbfc0a3","tls":true,"servername":"pardazeshvpn-tg57.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg57.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.156:443","type":"vless","server":"172.66.44.156","port":443,"uuid":"4045e84e-5e3c-4f70-8ff5-c1097882a55a","tls":true,"servername":"bpb-worker-panel1-e4p.pages.dev","network":"ws","ws-opts":{"path":"/Telegram@V2ray_Alpha/?ed=2560","headers":{"host":"bpb-worker-panel1-e4p.pages.dev"}},"alpn":["http/1.1"]}
+  - {"name":"🔒 TR-WS-TLS 🏴‍☠️ NA-104.26.12.54:443","type":"trojan","server":"104.26.12.54","port":443,"udp":true,"password":"auto","sni":"e9464f45.trauma-2r4.pages.dev","skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"e9464f45.trauma-2r4.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.101.242:443","type":"vless","server":"104.19.101.242","port":443,"uuid":"5e2a0dff-3392-476d-bbaa-c7b35380495e","tls":true,"servername":"FREEDOM31.Pages.DEV","network":"ws","ws-opts":{"path":"/","headers":{"host":"FREEDOM31.Pages.DEV"}},"alpn":["http/1.1"]}
+  - {"name":"[🇨🇦]t.me/ConfigsHub`_1","type":"vless","server":"172.66.45.7","port":443,"uuid":"a94edb46-0734-4593-a8b5-9cd11ddc57f6","tls":true,"servername":"5c53ca21.vpn-aryoo.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2560","headers":{"host":"5c53ca21.vpn-aryoo.pages.dev"}}}
+  - {"name":"🇬🇧GB-18.175.69.136-0524","type":"ss","server":"series-a2.samanehha.co","port":443,"password":"mps3FwmDjLrWaOVg","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.223:443","type":"vless","server":"172.67.214.223","port":443,"uuid":"71dce9af-d790-4b38-a1fd-7745e0923bd3","tls":true,"servername":"uciranir-uciranir-uciranir-uciranir-uciranir-uiranir-uciranir2.marol78205.workers.dev","network":"ws","ws-opts":{"path":"/-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR/?ed=2047","headers":{"host":"uciranir-uciranir-uciranir-uciranir-uciranir-uiranir-uciranir2.marol78205.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.13.130:443","type":"vless","server":"104.18.13.130","port":443,"uuid":"9e5c214e-746a-44d5-a9d0-0b0a8d37a957","tls":true,"servername":"vpn442vpn442442.hianif.workers.dev","network":"ws","ws-opts":{"path":"/?ed","headers":{"host":"vpn442vpn442442.hianif.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.130:443","type":"vless","server":"172.66.47.130","port":443,"uuid":"e8b87dd9-cc8f-407c-a1f3-a564009fe6ee","tls":true,"servername":"dc1bf227.vf-8co.pages.dev","network":"ws","ws-opts":{"path":"/Telegram@Azarakhsh_Proxy/?ed=2048","headers":{"host":"dc1bf227.vf-8co.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_1","type":"vless","server":"172.67.130.66","port":443,"uuid":"90cd4a77-141a-43c9-991b-08263cfe9c10","tls":true,"servername":"79193c43.aryoovpn-5fr.pages.dev","network":"ws","ws-opts":{"path":"/Telegram@Azarakhsh_Proxy/?ed=2048","headers":{"host":"79193c43.aryoovpn-5fr.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2083","type":"vless","server":"104.18.10.128","port":2083,"uuid":"d342d11e-d424-4583-b36e-524ab1f0afa4","tls":true,"servername":"xxx.donated002.workers.dev","network":"ws","ws-opts":{"path":"/@V2VIPCHANNEL/?ed=2048","headers":{"host":"xxx.donated002.workers.dev"}}}
+  - {"name":"👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_1","type":"vless","server":"172.66.47.130","port":443,"uuid":"e8b87dd9-cc8f-407c-a1f3-a564009fe6ee","tls":true,"servername":"dc1bf227.vf-8co.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"dc1bf227.vf-8co.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:8443","type":"vless","server":"104.18.10.128","port":8443,"uuid":"d345d11e-c424-4583-b36e-527ab1f0afa4","tls":true,"servername":"v2raynselling.kir-rasol-kir.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"v2raynselling.kir-rasol-kir.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.147.22:443","type":"vless","server":"104.17.147.22","port":443,"uuid":"e2f4d1fa-0a6d-48c3-a5bb-8b438e78af23","tls":true,"servername":"119f3a0b.chikiy123w.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"119f3a0b.chikiy123w.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.247.203:443","type":"vless","server":"104.17.247.203","port":443,"uuid":"46dbac8b-eaba-4275-940c-819f95d16916","tls":true,"servername":"falcunargo.9cfaf68585.workers.Dev","network":"ws","ws-opts":{"path":"/TELEGRAM-MARAMBASHI-MARAMBASHI/?ed=2048","headers":{"host":"falcunargo.9cfaf68585.workers.Dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.245.203:443","type":"vless","server":"104.17.245.203","port":443,"uuid":"46dbac8b-eaba-4275-940c-819f95d16916","tls":true,"servername":"falcunargo.9cfaf68585.workers.Dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"falcunargo.9cfaf68585.workers.Dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.126:443","type":"vless","server":"172.66.44.126","port":443,"uuid":"e8b87dd9-cc8f-407c-a1f3-a564009fe6ee","tls":true,"servername":"dc1bf227.vf-8co.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"dc1bf227.vf-8co.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.2:8443","type":"vless","server":"188.114.97.2","port":8443,"uuid":"6ad08747-42b9-4618-8f11-ac47de0da0f8","tls":true,"servername":"proxiiraniii.fiseye5589.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"proxiiraniii.fiseye5589.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.75.91:2096","type":"vless","server":"104.25.75.91","port":2096,"uuid":"67094874-89c5-4d30-8e98-a94aed8c9bc1","tls":true,"servername":"cpy-teel.cpy-teel1.workers.dev","network":"ws","ws-opts":{"path":"@CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL @CPY_TEEL","headers":{"host":"cpy-teel.cpy-teel1.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.61.43:443","type":"vless","server":"104.21.61.43","port":443,"uuid":"2b2c7058-d1d5-4217-82e4-d39da967a640","tls":true,"servername":"w27io.huntley-samael.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"w27io.huntley-samael.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.123:443","type":"vless","server":"172.66.44.123","port":443,"uuid":"22cecc0f-4ad2-4cc0-80e7-e5d6fb375803","tls":true,"servername":"pardazeshvpn-tg87.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg87.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.193.39:443","type":"vless","server":"172.67.193.39","port":443,"uuid":"b0e6a2c9-e667-4e42-9cb3-77d7db3e736b","tls":true,"servername":"bypassfilter.cmyyvat.workers.dev","network":"ws","ws-opts":{"path":"/@bypass_filter/?ed=100","headers":{"host":"bypassfilter.cmyyvat.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_1","type":"vless","server":"172.66.47.155","port":443,"uuid":"34a83286-ba4e-4f0a-ac08-77a95469eeaf","tls":true,"servername":"pardazesh18.pages.dev","network":"ws","ws-opts":{"path":"/TELEGRAM-MARAMBASHI/?ed=2048","headers":{"host":"pardazesh18.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_2","type":"vless","server":"172.67.130.66","port":443,"uuid":"90cd4a77-141a-43c9-991b-08263cfe9c10","tls":true,"servername":"79193c43.aryoovpn-5fr.pages.dev","network":"ws","ws-opts":{"path":"/Telegram-@V2ray_Alpha/?ed=2560","headers":{"host":"79193c43.aryoovpn-5fr.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.211:443","type":"vless","server":"172.66.44.211","port":443,"uuid":"690f16d0-6425-462b-86e0-a70a8169c5d9","tls":true,"servername":"pardazeshvpn-tg97.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg97.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.20.151:443","type":"vless","server":"104.21.20.151","port":443,"uuid":"b0e6a2c9-e667-4e42-9cb3-77d7db3e736b","tls":true,"servername":"bypassfilter.cmyyvat.workers.dev","network":"ws","ws-opts":{"path":"/@bypass_filter/?ed=100","headers":{"host":"bypassfilter.cmyyvat.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.72.167:443","type":"vless","server":"104.21.72.167","port":443,"uuid":"f20bcdc7-1a98-4573-aef5-653a40524c87","tls":true,"servername":"esetsecuritylicense.ltlumj.workers.dev","network":"ws","ws-opts":{"path":"/TELEGRAM-GH_V2RAYNG/?ed=2048","headers":{"host":"esetsecuritylicense.ltlumj.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2087","type":"vless","server":"104.18.10.128","port":2087,"uuid":"d345d11e-c424-4583-b36e-527ab1f0afa4","tls":true,"servername":"v2raynselling.kir-rasol-kir.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"v2raynselling.kir-rasol-kir.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:2087","type":"vless","server":"104.21.90.210","port":2087,"uuid":"a8a09765-7681-47ba-9ea0-e0ae79d51088","tls":true,"servername":"tnetplus-1wc.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048/-JoinBede--@ELiV2ry--@ELiV2ry--@ELiV2ry--@ELiV2ry","headers":{"host":"tnetplus-1wc.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.26.58:443","type":"vless","server":"104.21.26.58","port":443,"uuid":"61d93b9b-00d0-4df1-8027-6e036f4c1f11","tls":true,"servername":"freedom13.bypasojd.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"freedom13.bypasojd.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.168.58:443","type":"vless","server":"172.67.168.58","port":443,"uuid":"61d93b9b-00d0-4df1-8027-6e036f4c1f11","tls":true,"servername":"freedom13.bypasojd.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"freedom13.bypasojd.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.40.183:2053","type":"vless","server":"104.21.40.183","port":2053,"uuid":"30f1c7fe-9bf1-4120-b87e-80d6863d25a6","tls":true,"servername":"vpnfreeorg.darkdante8585.workers.dev","network":"ws","ws-opts":{"path":"vless-ws/?ed=2048","headers":{"host":"vpnfreeorg.darkdante8585.workers.dev"}},"alpn":["http/1.1"]}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.137.219:443","type":"vless","server":"172.67.137.219","port":443,"uuid":"79bf326d-93de-494f-a7a1-f9aaa764f86a","tls":true,"servername":"kir-too-kos-o-koon-maman-arzeshi-begoo-jooooooon.pages.dev","network":"ws","ws-opts":{"path":"/@ANA_Service?ed=2048","headers":{"host":"kir-too-kos-o-koon-maman-arzeshi-begoo-jooooooon.pages.dev"}}}
+  - {"name":"رایگان+|+SS+|+@VmessProtocol+|+GB🇬🇧+|+0️⃣2️⃣","type":"ss","server":"series-a2.varzesh360.co","port":443,"password":"mps3FwmDjLrWaOVg","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.154.6:2053","type":"vless","server":"172.67.154.6","port":2053,"uuid":"1ef91e6f-7522-4ded-84ea-4523dd2a15d6","tls":true,"servername":"uciran-uciran-uciran-uciran-uciran-uciran-uciran-uciran.gijih70892.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"uciran-uciran-uciran-uciran-uciran-uciran-uciran-uciran.gijih70892.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_2","type":"vless","server":"104.17.148.22","port":443,"uuid":"e2f4d1fa-0a6d-48c3-a5bb-8b438e78af23","tls":true,"servername":"119f3a0b.chikiy123w.pages.dev","network":"ws","ws-opts":{"path":"/Telegram@V2ray_Alpha/?ed=2560","headers":{"host":"119f3a0b.chikiy123w.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.33:443","type":"vless","server":"104.21.4.33","port":443,"uuid":"c110db8f-72c8-52a2-8ae9-dfbfd9704035","tls":true,"servername":"joinmahdiserver.pmyzdpx.wOrkErS.DEV","network":"ws","ws-opts":{"path":"/vless-ws/?ed=2048","headers":{"host":"joinmahdiserver.pmyzdpx.wOrkErS.DEV"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.237:443","type":"vless","server":"172.66.44.237","port":443,"uuid":"76434743-2a94-4cfd-8170-8e3971419b36","tls":true,"servername":"pardazeshvpn-tg85.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg85.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.248.203:443","type":"vless","server":"104.17.248.203","port":443,"uuid":"46dbac8b-eaba-4275-940c-819f95d16916","tls":true,"servername":"falcunargo.9cfaf68585.workers.Dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"falcunargo.9cfaf68585.workers.Dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.228:443","type":"vless","server":"104.21.25.228","port":443,"uuid":"1010501a-ca9a-479c-84d0-1308d97789b5","tls":true,"servername":"abbas-boveiry1.kisigen176.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"abbas-boveiry1.kisigen176.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:443","type":"vless","server":"104.21.83.62","port":443,"uuid":"5e2a0dff-3392-476d-bbaa-c7b35380495e","tls":true,"servername":"FREEDOM31.Pages.DEV","network":"ws","ws-opts":{"path":"/","headers":{"host":"FREEDOM31.Pages.DEV"}},"alpn":["http/1.1"]}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.190.131:8443","type":"vless","server":"104.16.190.131","port":8443,"uuid":"9d5e7586-64e1-4c29-9d47-6cbbd57fe8d1","tls":true,"servername":"pardazeshvpn-tg48.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"pardazeshvpn-tg48.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_1","type":"vless","server":"104.21.90.210","port":8443,"uuid":"a8a09765-7681-47ba-9ea0-e0ae79d51088","tls":true,"servername":"tnetplus-1wc.pages.dev","network":"ws","ws-opts":{"path":"/Telegram-@V2ray_Alpha/?ed=2048","headers":{"host":"tnetplus-1wc.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.21.135:2083","type":"vless","server":"104.18.21.135","port":2083,"uuid":"7b602260-2b84-482a-9d0d-ba1145a7c633","tls":true,"servername":"gug-2u1.pages.dev","network":"ws","ws-opts":{"path":"/Telegram-v2gog-v2gog-v2gog-v2gog-v2gog-v2gog=2048","headers":{"host":"gug-2u1.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_2","type":"vless","server":"104.21.90.210","port":8443,"uuid":"a8a09765-7681-47ba-9ea0-e0ae79d51088","tls":true,"servername":"tnetplus-1wc.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"tnetplus-1wc.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.27.62.243:443","type":"vless","server":"104.27.62.243","port":443,"uuid":"bf7e1009-1574-44f7-86df-6cbecd338477","tls":true,"servername":"pardazeshvpn-tg18.pages.dev","network":"ws","ws-opts":{"path":"/@VPNHTTPInjectorfree","headers":{"host":"pardazeshvpn-tg18.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.34.93:443","type":"vless","server":"104.17.34.93","port":443,"uuid":"5e2a0dff-3392-476d-bbaa-c7b35380495e","tls":true,"servername":"FREEDOM31.Pages.DEV","network":"ws","ws-opts":{"path":"/","headers":{"host":"FREEDOM31.Pages.DEV"}},"alpn":["http/1.1"]}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.46.252:443","type":"vless","server":"172.66.46.252","port":443,"uuid":"89b3cbba-e6ac-485a-9481-976a0415eab9","tls":true,"servername":"94391e80.uvPN-OrG.PAGes.Dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"94391e80.uvPN-OrG.PAGes.Dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.150:443","type":"vless","server":"172.66.44.150","port":443,"uuid":"bf7e1009-1574-44f7-86df-6cbecd338477","tls":true,"servername":"pardazeshvpn-tg18.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"pardazeshvpn-tg18.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.19:443","type":"vless","server":"172.66.47.19","port":443,"uuid":"76434743-2a94-4cfd-8170-8e3971419b36","tls":true,"servername":"pardazeshvpn-tg85.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg85.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.82:443","type":"vless","server":"172.66.47.82","port":443,"uuid":"f8a0d15b-e122-4a79-bd04-42c4565078df","tls":true,"servername":"pardazeshvpn-tg99.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg99.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.1.84:443","type":"vless","server":"104.18.1.84","port":443,"uuid":"aa9e4f20-f7f3-46cc-96f3-897116755cf3","tls":true,"servername":"worker-jolly-block-2e78.gamal32324.workers.Dev","network":"ws","ws-opts":{"path":"/TELEGRAM-MARAMBASHI-MARAMBASHI/?ed=2048","headers":{"host":"worker-jolly-block-2e78.gamal32324.workers.Dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.93.33:443","type":"vless","server":"104.21.93.33","port":443,"uuid":"d9dab185-980f-4f2b-bca6-a716bffcd07f","tls":true,"servername":"cpy-teel-mmd.mmdking02.workers.dev","network":"ws","ws-opts":{"path":"/@VPNHUB69,@VPNHUB69,@VPNHUB69,@VPNHUB69,@VPNHUB69,@VPNHUB69,@VPNHUB69,@VPNHUB69,@VPNHUB69,@VPNHUB69,@VPNHUB69,@VPNHUB69,","headers":{"host":"cpy-teel-mmd.mmdking02.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.45:443","type":"vless","server":"172.66.47.45","port":443,"uuid":"690f16d0-6425-462b-86e0-a70a8169c5d9","tls":true,"servername":"pardazeshvpn-tg97.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg97.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.191.101:443","type":"vless","server":"172.67.191.101","port":443,"uuid":"d672ec4f-afba-4f61-af09-eec872f97e99","tls":true,"servername":"test45-45f.pages.dev","network":"ws","ws-opts":{"path":"/Twitter苏小柠","headers":{"host":"test45-45f.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.2.57:443","type":"vless","server":"104.18.2.57","port":443,"uuid":"9c682edf-7e17-41d6-83e1-d7f6996a9542","tls":true,"servername":"vip1.yomato7390.workers.Dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vip1.yomato7390.workers.Dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.64.100.193:8443","type":"vless","server":"172.64.100.193","port":8443,"uuid":"c1fcd7eb-7d28-419c-a62f-fe3437fd884b","tls":true,"servername":"pardazeshvpn-tg36.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg36.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.249.203:443","type":"vless","server":"104.17.249.203","port":443,"uuid":"46dbac8b-eaba-4275-940c-819f95d16916","tls":true,"servername":"falcunargo.9cfaf68585.workers.Dev","network":"ws","ws-opts":{"path":"/TELEGRAM-MARAMBASHI-MARAMBASHI/?ed=2048","headers":{"host":"falcunargo.9cfaf68585.workers.Dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_2","type":"vless","server":"104.18.218.118","port":443,"uuid":"a94edb46-0734-4593-a8b5-9cd11ddc57f6","tls":true,"servername":"5c53ca21.vpn-aryoo.pages.dev","network":"ws","ws-opts":{"path":"/Telegram-MARAMBASHI/?ed=2560","headers":{"host":"5c53ca21.vpn-aryoo.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.45.7:443","type":"vless","server":"172.66.45.7","port":443,"uuid":"90cd4a77-141a-43c9-991b-08263cfe9c10","tls":true,"servername":"79193c43.aryoovpn-5fr.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"79193c43.aryoovpn-5fr.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.163:443","type":"vless","server":"172.66.47.163","port":443,"uuid":"db0437ba-d0fd-488f-814d-051d1cb8b5da","tls":true,"servername":"pardazeshvpn-tg103.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg103.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.240:8443","type":"vless","server":"172.66.44.240","port":8443,"uuid":"a94ccf98-19c8-4de4-bfb3-ac37a6696729","tls":true,"servername":"pardazeshvpn-tg60.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg60.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.152.111:443","type":"vless","server":"172.67.152.111","port":443,"uuid":"9f70a4c0-f727-47fb-ba7d-d604dba9669c","tls":true,"servername":"worker-little-leaf-7f8e.foxici5037.workers.Dev","network":"ws","ws-opts":{"path":"/TELEGRAM-MARAMBASHI/?ed=2048","headers":{"host":"worker-little-leaf-7f8e.foxici5037.workers.Dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.134:443","type":"vless","server":"188.114.99.134","port":443,"uuid":"9d1c74fe-6495-43c0-8c72-20a0b9a0c639","tls":true,"servername":"4ef0b961.aru0006.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"4ef0b961.aru0006.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.4.191:443","type":"vless","server":"104.19.4.191","port":443,"uuid":"affd5a9a-22fa-11ee-be56-0242ac120002","tls":true,"servername":"vpn870.tutorials26858.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"vpn870.tutorials26858.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.216.204:443","type":"vless","server":"172.67.216.204","port":443,"uuid":"c3c20db7-d32b-454a-9843-ec22d064a842","tls":true,"servername":"uciranir-uciranir-uiranir-uciranir-uciranir-uciranir-uciranir2.kehib41931.workers.dev","network":"ws","ws-opts":{"path":"/-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR/?ed=2047","headers":{"host":"uciranir-uciranir-uiranir-uciranir-uciranir-uciranir-uciranir2.kehib41931.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.109:2096","type":"vless","server":"172.66.47.109","port":2096,"uuid":"0fdc0235-0055-4203-a66f-f29e7e663d10","tls":true,"servername":"tnetplus3.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"tnetplus3.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.46.197:443","type":"vless","server":"104.21.46.197","port":443,"uuid":"c0fbd664-9693-4cc0-aa73-9247dbbadbeb","tls":true,"servername":"bed7nemarz.ribon88568.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"bed7nemarz.ribon88568.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.78.221:443","type":"vless","server":"104.21.78.221","port":443,"uuid":"79bf326d-93de-494f-a7a1-f9aaa764f86a","tls":true,"servername":"kir-too-kos-o-koon-maman-arzeshi-begoo-jooooooon.pages.dev","network":"ws","ws-opts":{"path":"/@ANA_Service?ed=2048","headers":{"host":"kir-too-kos-o-koon-maman-arzeshi-begoo-jooooooon.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.210.250:443","type":"vless","server":"104.20.210.250","port":443,"uuid":"6b7cce94-c140-4a00-976e-1f4b9b8babb5","tls":true,"servername":"mehdi-d2z.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"mehdi-d2z.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.158:443","type":"vless","server":"172.66.47.158","port":443,"uuid":"eb990b65-52d6-474a-8724-21114c866e73","tls":true,"servername":"pardazeshvpn-tg84.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg84.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.171:443","type":"vless","server":"172.66.47.171","port":443,"uuid":"7ac39a71-e678-4621-80bc-a0fc38866d17","tls":true,"servername":"pardazeshvpn-tg95.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg95.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.2:8443","type":"vless","server":"188.114.96.2","port":8443,"uuid":"6ad08747-42b9-4618-8f11-ac47de0da0f8","tls":true,"servername":"proxiiraniii.fiseye5589.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"proxiiraniii.fiseye5589.workers.dev"}}}
+  - {"name":"[🇨🇦]t.me/ConfigsHub`_2","type":"vless","server":"www.speedtest.net","port":443,"uuid":"e2f4d1fa-0a6d-48c3-a5bb-8b438e78af23","tls":true,"servername":"119f3a0b.chikiy123w.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"119f3a0b.chikiy123w.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.174:443","type":"vless","server":"172.66.44.174","port":443,"uuid":"f8a0d15b-e122-4a79-bd04-42c4565078df","tls":true,"servername":"pardazeshvpn-tg99.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg99.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.218.84:2053","type":"vless","server":"172.67.218.84","port":2053,"uuid":"3ceb909a-1a8a-4d47-9593-4226f21b2825","tls":true,"servername":"uciran-uciran-uciran-uciran-uciran-uciran-uciran.wapin67458.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"uciran-uciran-uciran-uciran-uciran-uciran-uciran.wapin67458.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.16.169:443","type":"vless","server":"104.21.16.169","port":443,"uuid":"71dce9af-d790-4b38-a1fd-7745e0923bd3","tls":true,"servername":"uciranir-uciranir-uciranir-uciranir-uciranir-uiranir-uciranir2.marol78205.workers.dev","network":"ws","ws-opts":{"path":"/-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR-@UCIRANIR/?ed=2047","headers":{"host":"uciranir-uciranir-uciranir-uciranir-uciranir-uiranir-uciranir2.marol78205.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.195:443","type":"vless","server":"172.66.44.195","port":443,"uuid":"89b3cbba-e6ac-485a-9481-976a0415eab9","tls":true,"servername":"23spt.pages.dev","network":"ws","ws-opts":{"path":"/Telegram@V2ray_Alpha/?ed=2560","headers":{"host":"23spt.pages.dev"}},"alpn":["http/1.1"]}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.13:443","type":"vless","server":"172.66.47.13","port":443,"uuid":"172c168f-c087-479f-b594-63dbf14aa504","tls":true,"servername":"pardazeshvpn-tg98.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg98.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.80.12:443","type":"vless","server":"104.21.80.12","port":443,"uuid":"e1cf1cbc-a1b0-4db8-86b0-45dd2e8a68da","tls":true,"servername":"easynet23.gosomok252.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"easynet23.gosomok252.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.54.50:443","type":"vless","server":"104.19.54.50","port":443,"uuid":"ad4a8fe9-2a32-49c4-a532-e4eef253f148","tls":true,"servername":"azadanet.azadanet.workers.dev","network":"ws","ws-opts":{"path":"/TELEGRAM-MARAMBASHI/?ed=2048","headers":{"host":"azadanet.azadanet.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.233:443","type":"vless","server":"172.66.44.233","port":443,"uuid":"38720105-063f-40f5-a5eb-f3198b9b617d","tls":true,"servername":"aksnmaioas.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"aksnmaioas.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.216:443","type":"vless","server":"188.114.96.216","port":443,"uuid":"c5a265b1-d3d7-4079-9dd2-e7d5c7da3637","tls":true,"servername":"ffffrwewrg3.af3025eb2e.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2560","headers":{"host":"ffffrwewrg3.af3025eb2e.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.42.102:8443","type":"vless","server":"104.21.42.102","port":8443,"uuid":"6df874ef-f074-4142-8ee9-7c4b88ff7a07","tls":true,"servername":"worker-singbox-rsae63.mbnpl.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"worker-singbox-rsae63.mbnpl.workers.dev"}}}
+  - {"name":"👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_2","type":"vless","server":"104.18.1.20","port":443,"uuid":"f06ac303-e626-451d-bcfc-ee825ee69398","tls":true,"servername":"AZaDnet-SEmEj.pAgEs.DeV","network":"ws","ws-opts":{"path":"oyF1T0jNP2ARuOYS?ed=2048","headers":{"host":"AZaDnet-SEmEj.pAgEs.DeV"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.246:2096","type":"vless","server":"172.67.214.246","port":2096,"uuid":"0fdc0235-0055-4203-a66f-f29e7e663d10","tls":true,"servername":"tnetplus3.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"tnetplus3.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.90:443","type":"vless","server":"172.66.44.90","port":443,"uuid":"2f758eb2-d936-4254-9227-71c38fc04609","tls":true,"servername":"pardazeshvpn-tg89.pages.dev","network":"ws","ws-opts":{"path":"/Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN-Telegram:@PARDAZESHVPN?ed=2048","headers":{"host":"pardazeshvpn-tg89.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.106:2053","type":"vless","server":"104.21.24.106","port":2053,"uuid":"3ceb909a-1a8a-4d47-9593-4226f21b2825","tls":true,"servername":"uciran-uciran-uciran-uciran-uciran-uciran-uciran.wapin67458.workers.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"uciran-uciran-uciran-uciran-uciran-uciran-uciran.wapin67458.workers.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:8443","type":"vless","server":"172.67.161.104","port":8443,"uuid":"a8a09765-7681-47ba-9ea0-e0ae79d51088","tls":true,"servername":"tnetplus-1wc.pages.dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"tnetplus-1wc.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_2","type":"vless","server":"172.66.47.155","port":443,"uuid":"34a83286-ba4e-4f0a-ac08-77a95469eeaf","tls":true,"servername":"pardazesh18.pages.dev","network":"ws","ws-opts":{"path":"/","headers":{"host":"pardazesh18.pages.dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.3.57:443","type":"vless","server":"104.18.3.57","port":443,"uuid":"9c682edf-7e17-41d6-83e1-d7f6996a9542","tls":true,"servername":"vip1.yomato7390.workers.Dev","network":"ws","ws-opts":{"path":"/?ed=2048","headers":{"host":"vip1.yomato7390.workers.Dev"}}}
+  - {"name":"🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.229.191:2096","type":"vless","server":"104.18.229.191","port":2096,"uuid":"7df71ea7-ad2f-48d1-ae7c-4429ee780537","tls":true,"servername":"academivpn1.academi-vpn-4f8.workers.dev","network":"ws","ws-opts":{"path":"/?ed=2560 @Academi_vpn@Academi_vpn@Academi_vpn@Academi_vpn@Academi_vpn@Academi_vpn@Academi_vpn@Academi_vpn","headers":{"host":"academivpn1.academi-vpn-4f8.workers.dev"}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - 🇺🇸_US_美国_1
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_1
-      - 🇫🇮_FI_芬兰
-      - 🇨🇳_CN_中国->🇹🇼_TW_台湾
-      - 🇸🇬_SG_新加坡_2
-      - 🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_3
-      - 🇺🇸_US_美国_2
-      - 🇸🇬_SG_新加坡->🇦🇺_AU_澳大利亚
-      - 🇨🇳_CN_中国_1
-      - 🇸🇬_SG_新加坡_4
-      - 🇺🇸_US_美国_3
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国_2
-      - 🇺🇸_US_美国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国_6
-      - 🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国_7
-      - 🇭🇰_HK_香港->🇱🇺_LU_卢森堡
-      - 🇨🇳_CN_中国_3
-      - 🇬🇧_GB_英国_3
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_8
-      - 🇫🇷_FR_法国
-      - 🇸🇬_SG_新加坡_5
-      - 🇭🇰_HK_香港_1
-      - 🇭🇰_HK_香港_2
-      - 🇨🇳_CN_中国_4
-      - 🇺🇸_US_美国_9
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_1
-      - 🇯🇵_JP_日本_2
-      - 🇦🇺_AU_澳大利亚
-      - 🇭🇰_HK_香港_3
-      - 🇸🇬_SG_新加坡_6
-      - 🇸🇬_SG_新加坡_7
-      - 🇭🇰_HK_香港_4
-      - 🇸🇬_SG_新加坡->🇯🇵_JP_日本
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_2
-      - 🇧🇿_BZ_伯利兹
-      - 🇭🇰_HK_香港->🇯🇵_JP_日本
-      - 🇭🇰_HK_香港_5
-      - 🇺🇸_US_美国_10
-      - 🇸🇬_SG_新加坡->🇺🇸_US_美国
-      - 🇨🇦_CA_加拿大
-      - 🇻🇳_VN_越南
-      - 🇨🇳_CN_中国_5
-      - 🇺🇸_US_美国_11
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.3.52:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.78.17:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.63.18:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.244:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.23:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.138.161:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.239.159:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.5.222:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.72:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.212:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.196.25:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.20.19.168:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.100:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.142.142:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.190:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.190.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.56:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.132.56:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-162.159.40.113:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.1.80:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.237:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.106:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.19.35.14:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.79.64:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.1:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:2096
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-172.66.44.131:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.215:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.98:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.128:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.98.102:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.172.147:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.93.27:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.24.24.45:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.156:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.26.12.54:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.101.242:443
+      - '[🇨🇦]t.me/ConfigsHub`_1'
+      - 🇬🇧GB-18.175.69.136-0524
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.223:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.13.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2083
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.147.22:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.247.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.245.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.126:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.2:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.75.91:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.61.43:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.123:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.193.39:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.211:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.20.151:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.72.167:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.26.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.168.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.40.183:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.137.219:443
+      - رایگان+|+SS+|+@VmessProtocol+|+GB🇬🇧+|+0️⃣2️⃣
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.154.6:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.237:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.248.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.228:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.190.131:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.21.135:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.27.62.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.34.93:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.46.252:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.150:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.19:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.82:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.1.84:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.93.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.45:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.191.101:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.2.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.64.100.193:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.249.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.45.7:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.163:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.240:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.152.111:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.134:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.4.191:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.216.204:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.109:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.46.197:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.78.221:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.210.250:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.158:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.171:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.2:8443
+      - '[🇨🇦]t.me/ConfigsHub`_2'
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.174:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.218.84:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.16.169:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.195:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.13:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.80.12:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.54.50:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.233:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.216:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.42.102:8443
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.246:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.90:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.106:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.3.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.229.191:2096
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - 🇺🇸_US_美国_1
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_1
-      - 🇫🇮_FI_芬兰
-      - 🇨🇳_CN_中国->🇹🇼_TW_台湾
-      - 🇸🇬_SG_新加坡_2
-      - 🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_3
-      - 🇺🇸_US_美国_2
-      - 🇸🇬_SG_新加坡->🇦🇺_AU_澳大利亚
-      - 🇨🇳_CN_中国_1
-      - 🇸🇬_SG_新加坡_4
-      - 🇺🇸_US_美国_3
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国_2
-      - 🇺🇸_US_美国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国_6
-      - 🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国_7
-      - 🇭🇰_HK_香港->🇱🇺_LU_卢森堡
-      - 🇨🇳_CN_中国_3
-      - 🇬🇧_GB_英国_3
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_8
-      - 🇫🇷_FR_法国
-      - 🇸🇬_SG_新加坡_5
-      - 🇭🇰_HK_香港_1
-      - 🇭🇰_HK_香港_2
-      - 🇨🇳_CN_中国_4
-      - 🇺🇸_US_美国_9
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_1
-      - 🇯🇵_JP_日本_2
-      - 🇦🇺_AU_澳大利亚
-      - 🇭🇰_HK_香港_3
-      - 🇸🇬_SG_新加坡_6
-      - 🇸🇬_SG_新加坡_7
-      - 🇭🇰_HK_香港_4
-      - 🇸🇬_SG_新加坡->🇯🇵_JP_日本
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_2
-      - 🇧🇿_BZ_伯利兹
-      - 🇭🇰_HK_香港->🇯🇵_JP_日本
-      - 🇭🇰_HK_香港_5
-      - 🇺🇸_US_美国_10
-      - 🇸🇬_SG_新加坡->🇺🇸_US_美国
-      - 🇨🇦_CA_加拿大
-      - 🇻🇳_VN_越南
-      - 🇨🇳_CN_中国_5
-      - 🇺🇸_US_美国_11
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.3.52:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.78.17:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.63.18:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.244:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.23:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.138.161:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.239.159:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.5.222:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.72:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.212:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.196.25:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.20.19.168:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.100:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.142.142:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.190:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.190.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.56:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.132.56:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-162.159.40.113:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.1.80:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.237:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.106:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.19.35.14:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.79.64:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.1:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:2096
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-172.66.44.131:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.215:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.98:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.128:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.98.102:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.172.147:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.93.27:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.24.24.45:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.156:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.26.12.54:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.101.242:443
+      - '[🇨🇦]t.me/ConfigsHub`_1'
+      - 🇬🇧GB-18.175.69.136-0524
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.223:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.13.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2083
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.147.22:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.247.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.245.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.126:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.2:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.75.91:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.61.43:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.123:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.193.39:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.211:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.20.151:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.72.167:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.26.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.168.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.40.183:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.137.219:443
+      - رایگان+|+SS+|+@VmessProtocol+|+GB🇬🇧+|+0️⃣2️⃣
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.154.6:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.237:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.248.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.228:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.190.131:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.21.135:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.27.62.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.34.93:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.46.252:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.150:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.19:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.82:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.1.84:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.93.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.45:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.191.101:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.2.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.64.100.193:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.249.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.45.7:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.163:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.240:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.152.111:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.134:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.4.191:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.216.204:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.109:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.46.197:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.78.221:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.210.250:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.158:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.171:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.2:8443
+      - '[🇨🇦]t.me/ConfigsHub`_2'
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.174:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.218.84:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.16.169:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.195:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.13:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.80.12:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.54.50:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.233:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.216:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.42.102:8443
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.246:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.90:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.106:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.3.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.229.191:2096
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 🇺🇸_US_美国_1
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_1
-      - 🇫🇮_FI_芬兰
-      - 🇨🇳_CN_中国->🇹🇼_TW_台湾
-      - 🇸🇬_SG_新加坡_2
-      - 🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_3
-      - 🇺🇸_US_美国_2
-      - 🇸🇬_SG_新加坡->🇦🇺_AU_澳大利亚
-      - 🇨🇳_CN_中国_1
-      - 🇸🇬_SG_新加坡_4
-      - 🇺🇸_US_美国_3
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国_2
-      - 🇺🇸_US_美国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国_6
-      - 🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国_7
-      - 🇭🇰_HK_香港->🇱🇺_LU_卢森堡
-      - 🇨🇳_CN_中国_3
-      - 🇬🇧_GB_英国_3
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_8
-      - 🇫🇷_FR_法国
-      - 🇸🇬_SG_新加坡_5
-      - 🇭🇰_HK_香港_1
-      - 🇭🇰_HK_香港_2
-      - 🇨🇳_CN_中国_4
-      - 🇺🇸_US_美国_9
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_1
-      - 🇯🇵_JP_日本_2
-      - 🇦🇺_AU_澳大利亚
-      - 🇭🇰_HK_香港_3
-      - 🇸🇬_SG_新加坡_6
-      - 🇸🇬_SG_新加坡_7
-      - 🇭🇰_HK_香港_4
-      - 🇸🇬_SG_新加坡->🇯🇵_JP_日本
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_2
-      - 🇧🇿_BZ_伯利兹
-      - 🇭🇰_HK_香港->🇯🇵_JP_日本
-      - 🇭🇰_HK_香港_5
-      - 🇺🇸_US_美国_10
-      - 🇸🇬_SG_新加坡->🇺🇸_US_美国
-      - 🇨🇦_CA_加拿大
-      - 🇻🇳_VN_越南
-      - 🇨🇳_CN_中国_5
-      - 🇺🇸_US_美国_11
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.3.52:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.78.17:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.63.18:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.244:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.23:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.138.161:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.239.159:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.5.222:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.72:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.212:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.196.25:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.20.19.168:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.100:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.142.142:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.190:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.190.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.56:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.132.56:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-162.159.40.113:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.1.80:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.237:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.106:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.19.35.14:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.79.64:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.1:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:2096
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-172.66.44.131:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.215:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.98:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.128:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.98.102:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.172.147:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.93.27:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.24.24.45:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.156:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.26.12.54:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.101.242:443
+      - '[🇨🇦]t.me/ConfigsHub`_1'
+      - 🇬🇧GB-18.175.69.136-0524
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.223:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.13.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2083
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.147.22:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.247.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.245.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.126:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.2:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.75.91:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.61.43:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.123:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.193.39:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.211:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.20.151:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.72.167:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.26.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.168.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.40.183:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.137.219:443
+      - رایگان+|+SS+|+@VmessProtocol+|+GB🇬🇧+|+0️⃣2️⃣
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.154.6:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.237:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.248.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.228:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.190.131:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.21.135:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.27.62.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.34.93:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.46.252:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.150:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.19:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.82:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.1.84:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.93.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.45:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.191.101:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.2.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.64.100.193:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.249.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.45.7:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.163:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.240:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.152.111:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.134:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.4.191:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.216.204:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.109:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.46.197:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.78.221:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.210.250:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.158:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.171:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.2:8443
+      - '[🇨🇦]t.me/ConfigsHub`_2'
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.174:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.218.84:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.16.169:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.195:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.13:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.80.12:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.54.50:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.233:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.216:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.42.102:8443
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.246:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.90:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.106:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.3.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.229.191:2096
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 🇺🇸_US_美国_1
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_1
-      - 🇫🇮_FI_芬兰
-      - 🇨🇳_CN_中国->🇹🇼_TW_台湾
-      - 🇸🇬_SG_新加坡_2
-      - 🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_3
-      - 🇺🇸_US_美国_2
-      - 🇸🇬_SG_新加坡->🇦🇺_AU_澳大利亚
-      - 🇨🇳_CN_中国_1
-      - 🇸🇬_SG_新加坡_4
-      - 🇺🇸_US_美国_3
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国_2
-      - 🇺🇸_US_美国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国_6
-      - 🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国_7
-      - 🇭🇰_HK_香港->🇱🇺_LU_卢森堡
-      - 🇨🇳_CN_中国_3
-      - 🇬🇧_GB_英国_3
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_8
-      - 🇫🇷_FR_法国
-      - 🇸🇬_SG_新加坡_5
-      - 🇭🇰_HK_香港_1
-      - 🇭🇰_HK_香港_2
-      - 🇨🇳_CN_中国_4
-      - 🇺🇸_US_美国_9
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_1
-      - 🇯🇵_JP_日本_2
-      - 🇦🇺_AU_澳大利亚
-      - 🇭🇰_HK_香港_3
-      - 🇸🇬_SG_新加坡_6
-      - 🇸🇬_SG_新加坡_7
-      - 🇭🇰_HK_香港_4
-      - 🇸🇬_SG_新加坡->🇯🇵_JP_日本
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_2
-      - 🇧🇿_BZ_伯利兹
-      - 🇭🇰_HK_香港->🇯🇵_JP_日本
-      - 🇭🇰_HK_香港_5
-      - 🇺🇸_US_美国_10
-      - 🇸🇬_SG_新加坡->🇺🇸_US_美国
-      - 🇨🇦_CA_加拿大
-      - 🇻🇳_VN_越南
-      - 🇨🇳_CN_中国_5
-      - 🇺🇸_US_美国_11
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.3.52:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.78.17:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.63.18:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.244:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.23:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.138.161:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.239.159:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.5.222:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.72:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.212:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.196.25:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.20.19.168:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.100:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.142.142:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.190:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.190.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.56:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.132.56:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-162.159.40.113:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.1.80:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.237:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.106:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.19.35.14:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.79.64:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.1:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:2096
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-172.66.44.131:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.215:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.98:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.128:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.98.102:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.172.147:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.93.27:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.24.24.45:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.156:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.26.12.54:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.101.242:443
+      - '[🇨🇦]t.me/ConfigsHub`_1'
+      - 🇬🇧GB-18.175.69.136-0524
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.223:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.13.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2083
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.147.22:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.247.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.245.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.126:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.2:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.75.91:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.61.43:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.123:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.193.39:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.211:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.20.151:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.72.167:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.26.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.168.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.40.183:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.137.219:443
+      - رایگان+|+SS+|+@VmessProtocol+|+GB🇬🇧+|+0️⃣2️⃣
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.154.6:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.237:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.248.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.228:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.190.131:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.21.135:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.27.62.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.34.93:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.46.252:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.150:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.19:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.82:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.1.84:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.93.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.45:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.191.101:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.2.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.64.100.193:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.249.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.45.7:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.163:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.240:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.152.111:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.134:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.4.191:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.216.204:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.109:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.46.197:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.78.221:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.210.250:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.158:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.171:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.2:8443
+      - '[🇨🇦]t.me/ConfigsHub`_2'
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.174:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.218.84:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.16.169:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.195:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.13:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.80.12:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.54.50:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.233:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.216:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.42.102:8443
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.246:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.90:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.106:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.3.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.229.191:2096
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 🇺🇸_US_美国_1
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_1
-      - 🇫🇮_FI_芬兰
-      - 🇨🇳_CN_中国->🇹🇼_TW_台湾
-      - 🇸🇬_SG_新加坡_2
-      - 🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_3
-      - 🇺🇸_US_美国_2
-      - 🇸🇬_SG_新加坡->🇦🇺_AU_澳大利亚
-      - 🇨🇳_CN_中国_1
-      - 🇸🇬_SG_新加坡_4
-      - 🇺🇸_US_美国_3
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国_2
-      - 🇺🇸_US_美国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国_6
-      - 🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国_7
-      - 🇭🇰_HK_香港->🇱🇺_LU_卢森堡
-      - 🇨🇳_CN_中国_3
-      - 🇬🇧_GB_英国_3
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_8
-      - 🇫🇷_FR_法国
-      - 🇸🇬_SG_新加坡_5
-      - 🇭🇰_HK_香港_1
-      - 🇭🇰_HK_香港_2
-      - 🇨🇳_CN_中国_4
-      - 🇺🇸_US_美国_9
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_1
-      - 🇯🇵_JP_日本_2
-      - 🇦🇺_AU_澳大利亚
-      - 🇭🇰_HK_香港_3
-      - 🇸🇬_SG_新加坡_6
-      - 🇸🇬_SG_新加坡_7
-      - 🇭🇰_HK_香港_4
-      - 🇸🇬_SG_新加坡->🇯🇵_JP_日本
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_2
-      - 🇧🇿_BZ_伯利兹
-      - 🇭🇰_HK_香港->🇯🇵_JP_日本
-      - 🇭🇰_HK_香港_5
-      - 🇺🇸_US_美国_10
-      - 🇸🇬_SG_新加坡->🇺🇸_US_美国
-      - 🇨🇦_CA_加拿大
-      - 🇻🇳_VN_越南
-      - 🇨🇳_CN_中国_5
-      - 🇺🇸_US_美国_11
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.3.52:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.78.17:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.63.18:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.244:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.23:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.138.161:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.239.159:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.5.222:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.72:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.212:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.196.25:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.20.19.168:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.100:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.142.142:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.190:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.190.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.56:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.132.56:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-162.159.40.113:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.1.80:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.237:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.106:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.19.35.14:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.79.64:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.1:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:2096
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-172.66.44.131:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.215:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.98:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.128:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.98.102:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.172.147:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.93.27:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.24.24.45:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.156:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.26.12.54:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.101.242:443
+      - '[🇨🇦]t.me/ConfigsHub`_1'
+      - 🇬🇧GB-18.175.69.136-0524
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.223:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.13.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2083
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.147.22:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.247.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.245.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.126:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.2:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.75.91:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.61.43:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.123:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.193.39:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.211:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.20.151:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.72.167:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.26.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.168.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.40.183:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.137.219:443
+      - رایگان+|+SS+|+@VmessProtocol+|+GB🇬🇧+|+0️⃣2️⃣
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.154.6:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.237:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.248.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.228:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.190.131:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.21.135:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.27.62.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.34.93:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.46.252:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.150:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.19:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.82:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.1.84:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.93.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.45:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.191.101:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.2.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.64.100.193:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.249.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.45.7:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.163:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.240:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.152.111:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.134:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.4.191:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.216.204:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.109:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.46.197:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.78.221:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.210.250:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.158:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.171:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.2:8443
+      - '[🇨🇦]t.me/ConfigsHub`_2'
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.174:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.218.84:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.16.169:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.195:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.13:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.80.12:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.54.50:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.233:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.216:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.42.102:8443
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.246:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.90:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.106:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.3.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.229.191:2096
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 🇺🇸_US_美国_1
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_1
-      - 🇫🇮_FI_芬兰
-      - 🇨🇳_CN_中国->🇹🇼_TW_台湾
-      - 🇸🇬_SG_新加坡_2
-      - 🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_3
-      - 🇺🇸_US_美国_2
-      - 🇸🇬_SG_新加坡->🇦🇺_AU_澳大利亚
-      - 🇨🇳_CN_中国_1
-      - 🇸🇬_SG_新加坡_4
-      - 🇺🇸_US_美国_3
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国_2
-      - 🇺🇸_US_美国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国_6
-      - 🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国_7
-      - 🇭🇰_HK_香港->🇱🇺_LU_卢森堡
-      - 🇨🇳_CN_中国_3
-      - 🇬🇧_GB_英国_3
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_8
-      - 🇫🇷_FR_法国
-      - 🇸🇬_SG_新加坡_5
-      - 🇭🇰_HK_香港_1
-      - 🇭🇰_HK_香港_2
-      - 🇨🇳_CN_中国_4
-      - 🇺🇸_US_美国_9
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_1
-      - 🇯🇵_JP_日本_2
-      - 🇦🇺_AU_澳大利亚
-      - 🇭🇰_HK_香港_3
-      - 🇸🇬_SG_新加坡_6
-      - 🇸🇬_SG_新加坡_7
-      - 🇭🇰_HK_香港_4
-      - 🇸🇬_SG_新加坡->🇯🇵_JP_日本
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_2
-      - 🇧🇿_BZ_伯利兹
-      - 🇭🇰_HK_香港->🇯🇵_JP_日本
-      - 🇭🇰_HK_香港_5
-      - 🇺🇸_US_美国_10
-      - 🇸🇬_SG_新加坡->🇺🇸_US_美国
-      - 🇨🇦_CA_加拿大
-      - 🇻🇳_VN_越南
-      - 🇨🇳_CN_中国_5
-      - 🇺🇸_US_美国_11
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.3.52:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.78.17:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.63.18:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.244:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.23:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.138.161:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.239.159:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.5.222:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.72:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.212:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.196.25:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.20.19.168:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.100:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.142.142:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.190:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.190.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.56:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.132.56:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-162.159.40.113:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.1.80:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.237:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.106:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.19.35.14:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.79.64:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.1:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:2096
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-172.66.44.131:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.215:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.98:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.128:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.98.102:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.172.147:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.93.27:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.24.24.45:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.156:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.26.12.54:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.101.242:443
+      - '[🇨🇦]t.me/ConfigsHub`_1'
+      - 🇬🇧GB-18.175.69.136-0524
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.223:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.13.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2083
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.147.22:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.247.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.245.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.126:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.2:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.75.91:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.61.43:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.123:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.193.39:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.211:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.20.151:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.72.167:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.26.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.168.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.40.183:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.137.219:443
+      - رایگان+|+SS+|+@VmessProtocol+|+GB🇬🇧+|+0️⃣2️⃣
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.154.6:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.237:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.248.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.228:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.190.131:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.21.135:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.27.62.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.34.93:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.46.252:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.150:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.19:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.82:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.1.84:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.93.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.45:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.191.101:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.2.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.64.100.193:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.249.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.45.7:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.163:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.240:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.152.111:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.134:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.4.191:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.216.204:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.109:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.46.197:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.78.221:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.210.250:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.158:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.171:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.2:8443
+      - '[🇨🇦]t.me/ConfigsHub`_2'
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.174:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.218.84:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.16.169:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.195:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.13:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.80.12:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.54.50:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.233:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.216:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.42.102:8443
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.246:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.90:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.106:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.3.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.229.191:2096
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -426,56 +1058,137 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 🇺🇸_US_美国_1
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_1
-      - 🇫🇮_FI_芬兰
-      - 🇨🇳_CN_中国->🇹🇼_TW_台湾
-      - 🇸🇬_SG_新加坡_2
-      - 🇬🇧_GB_英国_1
-      - 🇸🇬_SG_新加坡_3
-      - 🇺🇸_US_美国_2
-      - 🇸🇬_SG_新加坡->🇦🇺_AU_澳大利亚
-      - 🇨🇳_CN_中国_1
-      - 🇸🇬_SG_新加坡_4
-      - 🇺🇸_US_美国_3
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇨🇳_CN_中国_2
-      - 🇺🇸_US_美国->🇫🇷_FR_法国
-      - 🇺🇸_US_美国_6
-      - 🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国_7
-      - 🇭🇰_HK_香港->🇱🇺_LU_卢森堡
-      - 🇨🇳_CN_中国_3
-      - 🇬🇧_GB_英国_3
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_8
-      - 🇫🇷_FR_法国
-      - 🇸🇬_SG_新加坡_5
-      - 🇭🇰_HK_香港_1
-      - 🇭🇰_HK_香港_2
-      - 🇨🇳_CN_中国_4
-      - 🇺🇸_US_美国_9
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_1
-      - 🇯🇵_JP_日本_2
-      - 🇦🇺_AU_澳大利亚
-      - 🇭🇰_HK_香港_3
-      - 🇸🇬_SG_新加坡_6
-      - 🇸🇬_SG_新加坡_7
-      - 🇭🇰_HK_香港_4
-      - 🇸🇬_SG_新加坡->🇯🇵_JP_日本
-      - 🇸🇬_SG_新加坡->🇬🇧_GB_英国_2
-      - 🇺🇸_US_美国->🇩🇪_DE_德国_2
-      - 🇧🇿_BZ_伯利兹
-      - 🇭🇰_HK_香港->🇯🇵_JP_日本
-      - 🇭🇰_HK_香港_5
-      - 🇺🇸_US_美国_10
-      - 🇸🇬_SG_新加坡->🇺🇸_US_美国
-      - 🇨🇦_CA_加拿大
-      - 🇻🇳_VN_越南
-      - 🇨🇳_CN_中国_5
-      - 🇺🇸_US_美国_11
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.3.52:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.78.17:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.63.18:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.244:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.23:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.138.161:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.239.159:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.5.222:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.72:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.128.212:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.196.25:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.20.19.168:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.100:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.142.142:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.190:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.190.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.56:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.132.56:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-162.159.40.113:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.1.80:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.237:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.106:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.19.35.14:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.79.64:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.1:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:2096
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-172.66.44.131:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.19.215:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.98:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.128:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.98.102:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.172.147:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.93.27:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.24.24.45:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.243:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.156:443
+      - 🔒 TR-WS-TLS 🏴‍☠️ NA-104.26.12.54:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.101.242:443
+      - '[🇨🇦]t.me/ConfigsHub`_1'
+      - 🇬🇧GB-18.175.69.136-0524
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.223:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.13.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.130:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2083
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.147.22:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.247.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.245.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.126:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.97.2:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.25.75.91:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.61.43:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.123:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.193.39:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.130.66:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.211:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.20.151:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.72.167:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.10.128:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:2087
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.26.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.168.58:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.40.183:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.137.219:443
+      - رایگان+|+SS+|+@VmessProtocol+|+GB🇬🇧+|+0️⃣2️⃣
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.154.6:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.148.22:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.4.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.237:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.248.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.25.228:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.83.62:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.16.190.131:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_1
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.21.135:2083
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.90.210:8443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.27.62.243:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.34.93:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.46.252:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.150:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.19:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.82:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.1.84:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.93.33:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.45:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.191.101:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.2.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.64.100.193:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.17.249.203:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.218.118:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.45.7:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.163:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.240:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.152.111:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.99.134:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.4.191:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.216.204:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.109:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.46.197:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.78.221:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.20.210.250:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.158:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.171:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.2:8443
+      - '[🇨🇦]t.me/ConfigsHub`_2'
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.174:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.218.84:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.16.169:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.195:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.13:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.80.12:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.19.54.50:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.233:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-188.114.96.216:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.42.102:8443
+      - 👉🆔 @v2ray_configs_pool📡🇨🇦Canada`_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.214.246:2096
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.90:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.21.24.106:2053
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.67.161.104:8443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.47.155:443_2
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.3.57:443
+      - 🔒 VL-WS-TLS 🏴‍☠️ NA-104.18.229.191:2096
 
 rules:
 # 本地/局域网地址
@@ -2414,7 +3127,7 @@ rules:
 # YouTubeMusic
   - DOMAIN-SUFFIX,edgedatg.com,🌍 国外媒体
   - DOMAIN-SUFFIX,go.com,🌍 国外媒体
-#,USER-AGENT,AbemaTV*,🌍 国外媒体
+#   - USER-AGENT,AbemaTV*,🌍 国外媒体
   - DOMAIN-KEYWORD,abematv.akamaized.net,🌍 国外媒体
   - DOMAIN,api-abematv.bucketeer.jp,🌍 国外媒体
   - DOMAIN-SUFFIX,abema-tv.com,🌍 国外媒体
@@ -2423,7 +3136,7 @@ rules:
   - DOMAIN-SUFFIX,ameba.jp,🌍 国外媒体
   - DOMAIN-SUFFIX,hayabusa.io,🌍 国外媒体
   - DOMAIN-SUFFIX,hayabusa.media,🌍 国外媒体
-#,USER-AGENT,All4*,🌍 国外媒体
+#   - USER-AGENT,All4*,🌍 国外媒体
   - DOMAIN-SUFFIX,c4assets.com,🌍 国外媒体
   - DOMAIN-SUFFIX,channel4.com,🌍 国外媒体
   - DOMAIN-KEYWORD,avoddashs,🌍 国外媒体
@@ -2445,14 +3158,14 @@ rules:
   - DOMAIN-SUFFIX,amazonvideo.com,🌍 国外媒体
   - DOMAIN-SUFFIX,media-amazon.com,🌍 国外媒体
   - DOMAIN-SUFFIX,pv-cdn.net,🌍 国外媒体
-#,URL-REGEX,^https?:\/\/www\.amazon\.com\/(Amazon-Video|gp\/video)\/,🌍 国外媒体
-#,USER-AGENT,AppleNews*,🌍 国外媒体
-#,USER-AGENT,com.apple.news*,🌍 国外媒体
+#   - URL-REGEX,^https?:\/\/www\.amazon\.com\/(Amazon-Video|gp\/video)\/,🌍 国外媒体
+#   - USER-AGENT,AppleNews*,🌍 国外媒体
+#   - USER-AGENT,com.apple.news*,🌍 国外媒体
   - DOMAIN,gspe1-ssl.ls.apple.com,🌍 国外媒体
   - DOMAIN,np-edge.itunes.apple.com,🌍 国外媒体
   - DOMAIN,play-edge.itunes.apple.com,🌍 国外媒体
   - DOMAIN-SUFFIX,tv.apple.com,🌍 国外媒体
-#,USER-AGENT,BBCiPlayer*,🌍 国外媒体
+#   - USER-AGENT,BBCiPlayer*,🌍 国外媒体
   - DOMAIN-KEYWORD,bbcfmt,🌍 国外媒体
   - DOMAIN-KEYWORD,uk-live,🌍 国外媒体
   - DOMAIN,aod-dash-uk-live.akamaized.net,🌍 国外媒体
@@ -2467,13 +3180,13 @@ rules:
   - DOMAIN-SUFFIX,bbci.co,🌍 国外媒体
   - DOMAIN-SUFFIX,bbci.co.uk,🌍 国外媒体
   - DOMAIN-SUFFIX,bidi.net.uk,🌍 国外媒体
-#,USER-AGENT,Anime*,🌍 国外媒体
+#   - USER-AGENT,Anime*,🌍 国外媒体
   - DOMAIN,bahamut.akamaized.net,🌍 国外媒体
   - DOMAIN,gamer-cds.cdn.hinet.net,🌍 国外媒体
   - DOMAIN,gamer2-cds.cdn.hinet.net,🌍 国外媒体
   - DOMAIN-SUFFIX,bahamut.com.tw,🌍 国外媒体
   - DOMAIN-SUFFIX,gamer.com.tw,🌍 国外媒体
-#,USER-AGENT,DAZN*,🌍 国外媒体
+#   - USER-AGENT,DAZN*,🌍 国外媒体
   - DOMAIN-KEYWORD,voddazn,🌍 国外媒体
   - DOMAIN,d151l6v8er5bdm.cloudfront.net,🌍 国外媒体
   - DOMAIN-SUFFIX,d151l6v8er5bdm.cloudfront.net,🌍 国外媒体
@@ -2485,14 +3198,14 @@ rules:
   - DOMAIN-SUFFIX,indazn.com,🌍 国外媒体
   - DOMAIN-SUFFIX,indaznlab.com,🌍 国外媒体
   - DOMAIN-SUFFIX,sentry.io,🌍 国外媒体
-#,USER-AGENT,Deezer*,🌍 国外媒体
+#   - USER-AGENT,Deezer*,🌍 国外媒体
   - DOMAIN-SUFFIX,deezer.com,🌍 国外媒体
   - DOMAIN-SUFFIX,dzcdn.net,🌍 国外媒体
   - DOMAIN-SUFFIX,disco-api.com,🌍 国外媒体
   - DOMAIN-SUFFIX,discovery.com,🌍 国外媒体
   - DOMAIN-SUFFIX,uplynk.com,🌍 国外媒体
-#,USER-AGENT,Disney*,🌍 国外媒体
-#,USER-AGENT,Disney+*,🌍 国外媒体
+#   - USER-AGENT,Disney*,🌍 国外媒体
+#   - USER-AGENT,Disney+*,🌍 国外媒体
   - DOMAIN,cdn.registerdisney.go.com,🌍 国外媒体
   - DOMAIN-SUFFIX,adobedtm.com,🌍 国外媒体
   - DOMAIN-SUFFIX,bam.nr-data.net,🌍 国外媒体
@@ -2513,24 +3226,24 @@ rules:
   - DOMAIN-SUFFIX,dssott.com,🌍 国外媒体
   - DOMAIN-SUFFIX,execute-api.us-east-1.amazonaws.com,🌍 国外媒体
   - DOMAIN-SUFFIX,js-agent.newrelic.com,🌍 国外媒体
-#,USER-AGENT,encoreTVB*,🌍 国外媒体
+#   - USER-AGENT,encoreTVB*,🌍 国外媒体
   - DOMAIN,bcbolt446c5271-a.akamaihd.net,🌍 国外媒体
   - DOMAIN,content.jwplatform.com,🌍 国外媒体
   - DOMAIN,edge.api.brightcove.com,🌍 国外媒体
   - DOMAIN,videos-f.jwpsrv.com,🌍 国外媒体
   - DOMAIN-SUFFIX,encoretvb.com,🌍 国外媒体
-#,USER-AGENT,FOX%20NOW*,🌍 国外媒体
+#   - USER-AGENT,FOX%20NOW*,🌍 国外媒体
   - DOMAIN-SUFFIX,fox.com,🌍 国外媒体
   - DOMAIN-SUFFIX,foxdcg.com,🌍 国外媒体
   - DOMAIN-SUFFIX,uplynk.com,🌍 国外媒体
-#,USER-AGENT,HBO%20NOW*,🌍 国外媒体
-#,USER-AGENT,HBOMAX*,🌍 国外媒体
+#   - USER-AGENT,HBO%20NOW*,🌍 国外媒体
+#   - USER-AGENT,HBOMAX*,🌍 国外媒体
   - DOMAIN-SUFFIX,hbo.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbogo.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbomax.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbomaxcdn.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbonow.com,🌍 国外媒体
-#,USER-AGENT,HBO%20GO%20PROD*,🌍 国外媒体
+#   - USER-AGENT,HBO%20GO%20PROD*,🌍 国外媒体
   - DOMAIN-KEYWORD,.hbogoasia.,🌍 国外媒体
   - DOMAIN-KEYWORD,hbogoasia,🌍 国外媒体
   - DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,🌍 国外媒体
@@ -2551,7 +3264,7 @@ rules:
   - DOMAIN-SUFFIX,hboasia.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbogoasia.com,🌍 国外媒体
   - DOMAIN-SUFFIX,hbogoasia.hk,🌍 国外媒体
-#,USER-AGENT,HWTVMobile*,🌍 国外媒体
+#   - USER-AGENT,HWTVMobile*,🌍 国外媒体
   - DOMAIN-SUFFIX,5itv.tv,🌍 国外媒体
   - DOMAIN-SUFFIX,ocnttv.com,🌍 国外媒体
   - DOMAIN-SUFFIX,cws-hulu.conviva.com,🌍 国外媒体
@@ -2567,12 +3280,12 @@ rules:
   - DOMAIN-SUFFIX,prod.hjholdings.tv,🌍 国外媒体
   - DOMAIN-SUFFIX,streaks.jp,🌍 国外媒体
   - DOMAIN-SUFFIX,yb.uncn.jp,🌍 国外媒体
-#,USER-AGENT,ITV_Player*,🌍 国外媒体
+#   - USER-AGENT,ITV_Player*,🌍 国外媒体
   - DOMAIN,itvpnpmobile-a.akamaihd.net,🌍 国外媒体
   - DOMAIN-SUFFIX,itv.com,🌍 国外媒体
   - DOMAIN-SUFFIX,itvstatic.com,🌍 国外媒体
-#,USER-AGENT,JOOX*,🌍 国外媒体
-#,USER-AGENT,WeMusic*,🌍 国外媒体
+#   - USER-AGENT,JOOX*,🌍 国外媒体
+#   - USER-AGENT,WeMusic*,🌍 国外媒体
   - DOMAIN-KEYWORD,jooxweb-api,🌍 国外媒体
   - DOMAIN-SUFFIX,joox.com,🌍 国外媒体
   - DOMAIN-KEYWORD,japonx,🌍 国外媒体
@@ -2588,32 +3301,32 @@ rules:
   - DOMAIN-SUFFIX,kfs.io,🌍 国外媒体
   - DOMAIN-SUFFIX,kkbox.com,🌍 国外媒体
   - DOMAIN-SUFFIX,kkbox.com.tw,🌍 国外媒体
-#,USER-AGENT,KKTV*,🌍 国外媒体
-#,USER-AGENT,com.kktv.ios.kktv*,🌍 国外媒体
+#   - USER-AGENT,KKTV*,🌍 国外媒体
+#   - USER-AGENT,com.kktv.ios.kktv*,🌍 国外媒体
   - DOMAIN,kktv-theater.kk.stream,🌍 国外媒体
   - DOMAIN,theater-kktv.cdn.hinet.net,🌍 国外媒体
   - DOMAIN-SUFFIX,kktv.com.tw,🌍 国外媒体
   - DOMAIN-SUFFIX,kktv.me,🌍 国外媒体
   - DOMAIN,litvfreemobile-hichannel.cdn.hinet.net,🌍 国外媒体
   - DOMAIN-SUFFIX,litv.tv,🌍 国外媒体
-#,USER-AGENT,LINE%20TV*,🌍 国外媒体
-#,USER-AGENT,LINE*,🌍 国外媒体
+#   - USER-AGENT,LINE%20TV*,🌍 国外媒体
+#   - USER-AGENT,LINE*,🌍 国外媒体
   - DOMAIN,d3c7rimkq79yfu.cloudfront.net,🌍 国外媒体
   - DOMAIN-SUFFIX,d3c7rimkq79yfu.cloudfront.net,🌍 国外媒体
   - DOMAIN-SUFFIX,linetv.tw,🌍 国外媒体
   - DOMAIN-SUFFIX,profile.line-scdn.net,🌍 国外媒体
-#,USER-AGENT,My5*,🌍 国外媒体
+#   - USER-AGENT,My5*,🌍 国外媒体
   - DOMAIN,d349g9zuie06uo.cloudfront.net,🌍 国外媒体
   - DOMAIN-SUFFIX,channel5.com,🌍 国外媒体
   - DOMAIN-SUFFIX,my5.tv,🌍 国外媒体
-#,USER-AGENT,mytv*,🌍 国外媒体
+#   - USER-AGENT,mytv*,🌍 国外媒体
   - DOMAIN-KEYWORD,nowtv100,🌍 国外媒体
   - DOMAIN-KEYWORD,rthklive,🌍 国外媒体
   - DOMAIN,mytvsuperlimited.hb.omtrdc.net,🌍 国外媒体
   - DOMAIN,mytvsuperlimited.sc.omtrdc.net,🌍 国外媒体
   - DOMAIN-SUFFIX,mytvsuper.com,🌍 国外媒体
   - DOMAIN-SUFFIX,tvb.com,🌍 国外媒体
-#,USER-AGENT,Argo*,🌍 国外媒体
+#   - USER-AGENT,Argo*,🌍 国外媒体
   - DOMAIN-KEYWORD,apiproxy-device-prod-nlb-,🌍 国外媒体
   - DOMAIN-KEYWORD,dualstack.apiproxy-,🌍 国外媒体
   - DOMAIN-KEYWORD,netflixdnstest,🌍 国外媒体
@@ -2653,24 +3366,24 @@ rules:
   - IP-CIDR,198.45.48.0/20,🌍 国外媒体,no-resolve
   - IP-CIDR,207.45.72.0/22,🌍 国外媒体,no-resolve
   - IP-CIDR,208.75.76.0/22,🌍 国外媒体,no-resolve
-#,USER-AGENT,Niconico*,🌍 国外媒体
+#   - USER-AGENT,Niconico*,🌍 国外媒体
   - DOMAIN-SUFFIX,dmc.nico,🌍 国外媒体
   - DOMAIN-SUFFIX,nicovideo.jp,🌍 国外媒体
   - DOMAIN-SUFFIX,nimg.jp,🌍 国外媒体
-#,USER-AGENT,PBS*,🌍 国外媒体
+#   - USER-AGENT,PBS*,🌍 国外媒体
   - DOMAIN-SUFFIX,pbs.org,🌍 国外媒体
-#,USER-AGENT,Pandora*,🌍 国外媒体
+#   - USER-AGENT,Pandora*,🌍 国外媒体
   - DOMAIN-SUFFIX,pandora.com,🌍 国外媒体
   - DOMAIN-SUFFIX,phncdn.com,🌍 国外媒体
   - DOMAIN-SUFFIX,phprcdn.com,🌍 国外媒体
   - DOMAIN-SUFFIX,pornhub.com,🌍 国外媒体
   - DOMAIN-SUFFIX,pornhubpremium.com,🌍 国外媒体
   - DOMAIN-SUFFIX,qobuz.com,🌍 国外媒体
-#,USER-AGENT,SoundCloud*,🌍 国外媒体
+#   - USER-AGENT,SoundCloud*,🌍 国外媒体
   - DOMAIN-SUFFIX,p-cdn.us,🌍 国外媒体
   - DOMAIN-SUFFIX,sndcdn.com,🌍 国外媒体
   - DOMAIN-SUFFIX,soundcloud.com,🌍 国外媒体
-#,USER-AGENT,Spotify*,🌍 国外媒体
+#   - USER-AGENT,Spotify*,🌍 国外媒体
   - DOMAIN-KEYWORD,-spotify-com,🌍 国外媒体
   - DOMAIN-KEYWORD,spotify.com,🌍 国外媒体
   - DOMAIN-SUFFIX,pscdn.co,🌍 国外媒体
@@ -2679,14 +3392,14 @@ rules:
   - DOMAIN-SUFFIX,spotify.com,🌍 国外媒体
   - DOMAIN-SUFFIX,spotifycdn.com,🌍 国外媒体
   - DOMAIN-SUFFIX,spotifycdn.net,🌍 国外媒体
-#,USER-AGENT,TIDAL*,🌍 国外媒体
+#   - USER-AGENT,TIDAL*,🌍 国外媒体
   - DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com,🌍 国外媒体
   - DOMAIN-SUFFIX,tidal.com,🌍 国外媒体
   - DOMAIN-SUFFIX,tidalhifi.com,🌍 国外媒体
-#,USER-AGENT,TaiwanGood*,🌍 国外媒体
+#   - USER-AGENT,TaiwanGood*,🌍 国外媒体
   - DOMAIN,hamifans.emome.net,🌍 国外媒体
   - DOMAIN-SUFFIX,skyking.com.tw,🌍 国外媒体
-#,USER-AGENT,TikTok*,🌍 国外媒体
+#   - USER-AGENT,TikTok*,🌍 国外媒体
   - DOMAIN-KEYWORD,tiktokcdn-,🌍 国外媒体
   - DOMAIN-SUFFIX,byteoversea.com,🌍 国外媒体
   - DOMAIN-SUFFIX,ibytedtos.com,🌍 国外媒体
@@ -2704,7 +3417,7 @@ rules:
   - DOMAIN-SUFFIX,twitch-ext.rootonline.de,🌍 国外媒体
   - DOMAIN-SUFFIX,twitch.tv,🌍 国外媒体
   - DOMAIN-SUFFIX,twitchcdn.net,🌍 国外媒体
-#,USER-AGENT,Viu*,🌍 国外媒体
+#   - USER-AGENT,Viu*,🌍 国外媒体
   - PROCESS-NAME,com.viu.pad,🌍 国外媒体
   - PROCESS-NAME,com.viu.phone,🌍 国外媒体
   - PROCESS-NAME,com.vuclip.viu,🌍 国外媒体
@@ -2720,9 +3433,9 @@ rules:
   - DOMAIN-SUFFIX,viu.com,🌍 国外媒体
   - DOMAIN-SUFFIX,viu.now.com,🌍 国外媒体
   - DOMAIN-SUFFIX,viu.tv,🌍 国外媒体
-#,USER-AGENT,*youtube*,🌍 国外媒体
-#,USER-AGENT,YouTube*,🌍 国外媒体
-#,USER-AGENT,com.google.ios.youtube*,🌍 国外媒体
+#   - USER-AGENT,*youtube*,🌍 国外媒体
+#   - USER-AGENT,YouTube*,🌍 国外媒体
+#   - USER-AGENT,com.google.ios.youtube*,🌍 国外媒体
   - DOMAIN-KEYWORD,youtube,🌍 国外媒体
   - DOMAIN,youtubei.googleapis.com,🌍 国外媒体
   - DOMAIN,yt3.ggpht.com,🌍 国外媒体
@@ -2737,10 +3450,10 @@ rules:
   - DOMAIN-SUFFIX,youtubekids.com,🌍 国外媒体
   - DOMAIN-SUFFIX,yt.be,🌍 国外媒体
   - DOMAIN-SUFFIX,ytimg.com,🌍 国外媒体
-#,USER-AGENT,*YouTubeMusic*,🌍 国外媒体
-#,USER-AGENT,*com.google.ios.youtubemusic*,🌍 国外媒体
-#,USER-AGENT,YouTubeMusic*,🌍 国外媒体
-#,USER-AGENT,com.google.ios.youtubemusic*,🌍 国外媒体
+#   - USER-AGENT,*YouTubeMusic*,🌍 国外媒体
+#   - USER-AGENT,*com.google.ios.youtubemusic*,🌍 国外媒体
+#   - USER-AGENT,YouTubeMusic*,🌍 国外媒体
+#   - USER-AGENT,com.google.ios.youtubemusic*,🌍 国外媒体
   - DOMAIN,music.youtube.com,🌍 国外媒体
 # Telegram
 #PROCESS-NAME,Telegram.exe
